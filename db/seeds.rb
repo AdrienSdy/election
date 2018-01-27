@@ -9,3 +9,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' },
 #                          { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Permission.create!([{ name: 'sudo', description: 'grant all access' },
+                    { name: 'candidate', description: 'allow to be elected' }])
