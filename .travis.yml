@@ -10,4 +10,7 @@ before_install: gem install bundler -v 1.16.1
 before_script:
   - psql -c 'create database election_test;' -U postgres
 
-script: rake ci
+script:
+  - RAILS_ENV=test rake db:migrate --trace
+  - rake db:seed
+  - rake ci
