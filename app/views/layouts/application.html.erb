@@ -26,6 +26,10 @@
           <!-- Navigation -->
           <nav class="mdl-navigation">
             <% if person_signed_in? %>
+              <% if current_person.admin? %>
+                <%= link_to 'People', admin_people_path, class: 'mdl-navigation__link' %>
+                <%= link_to 'Permissions', admin_permissions_path, class: 'mdl-navigation__link' %>
+              <% end %>
               <%= link_to 'Se déconnecter', destroy_person_session_path,
                           method: :delete, class: 'mdl-navigation__link' %>
             <% else %>
