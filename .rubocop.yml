@@ -1,0 +1,9 @@
+require: rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'vendor/**/*'
+
+Style/Documentation:
+  Enabled: false

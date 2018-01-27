@@ -1,0 +1,13 @@
+sudo: false
+language: ruby
+rvm: 2.4.1
+
+addons:
+  postgresql: '9.6'
+
+before_install: gem install bundler -v 1.16.1
+
+before_script:
+  - psql -c 'create database election_test;' -U postgres
+
+script: rake ci
