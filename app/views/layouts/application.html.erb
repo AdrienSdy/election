@@ -25,10 +25,15 @@
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation -->
           <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
+            <% if person_signed_in? %>
+              <%= link_to 'Se déconnecter', destroy_person_session_path,
+                          method: :delete, class: 'mdl-navigation__link' %>
+            <% else %>
+              <%= link_to 'Se connecter', new_person_session_path,
+                          class: 'mdl-navigation__link' %>
+              <%= link_to 'S\'enregistrer', new_person_registration_path,
+                          class: 'mdl-navigation__link' %>
+            <% end %>
           </nav>
         </div>
       </header>
